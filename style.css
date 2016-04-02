@@ -1,8 +1,15 @@
-<style>
-  #logo {
-    display: none;
-    stroke: black;
-    fill: none;
-    stroke-linejoin: round;
-  }
-</style>
+@font-face{
+  font-family: pwooHandwriting;
+  src: url(pwoo_handwriting.ttf);
+}
+
+#navbar{
+  font-family: pwooHandwriting;
+}
+
+#logo {
+  display: none;
+  stroke: black;
+  fill: none;
+  stroke-linejoin: round;
+}
