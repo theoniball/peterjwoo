@@ -3,6 +3,10 @@
   src: url(pwoo_handwriting.ttf);
 }
 
+body{
+  margin: 0;
+}
+
 #navbar{
   font-family: pwooHandwriting;
   background-color: #ECECEC;
