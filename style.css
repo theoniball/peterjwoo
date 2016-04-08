@@ -1,3 +1,7 @@
+/*-----------------------*/
+/*--------General--------*/
+/*-----------------------*/
+
 @font-face{
   font-family: pwooHandwriting;
   src: url(pwoo_handwriting.ttf);
@@ -6,6 +10,10 @@
 body{
   margin: 0;
 }
+
+/*-----------------------*/
+/*--------Navbar---------*/
+/*-----------------------*/
 
 #navbar{
   font-family: pwooHandwriting;
@@ -37,7 +45,6 @@ body{
   animation-duration: 2s, .5s;
   animation-delay: 0s, 1.5s;
 }
-
 #logo {
   stroke: #ffffff;
   fill: #ffffff;
@@ -52,6 +59,23 @@ body{
   animation-iteration: 1;
   animation-name: dash, fillin;
 }
+
+/*----- hover -----*/
+/*#s3:hover{
+  animation-name: extend;
+  animation-duration: 1s;
+}*/
+
+
+/*-----------------------*/
+/*--Animation Keyframes--*/
+/*-----------------------*/
+
+/*@keyframes extend {
+  to {
+    <path d="M0,0 l0 100 400 0 c50 -45 10 -50 70 -100 Z"/>;
+  }
+}*/
 
 @keyframes dash {
   to{
