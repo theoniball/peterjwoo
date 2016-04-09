@@ -3,18 +3,17 @@ $(document).ready(function(){
     var speed = 250,
         easing = mina.easeinout;
 
-    [].slice.call (document.querySelectorAll('#navbar')).forEach(function(el){
-      var s = Snap(el.querySelector('#s3')), path = s.select('path'),
-      var t = Snap(el.querySelector('#s3link')), hoverPath = t.select('data-path-hover'),
+    [].slice.call (document.querySelectorAll('#container > a')).forEach(function(el){
+      var s = Snap(el.querySelector('svg')), path = s.select('path'),
       pathConfig = {
         from : path.attr('d'),
-        to : hoverPath
+        to : el.getAttribute('data-path-hover')
       };
 
-      $('#s3').addEventListener('mouseenter', function() {
+      el.addEventListener('mouseenter', function() {
         path.animate({'path' : pathConfig.to }, speed, easing);
       });
-      $('#s3').addEventListener('mouseleave', function(){
+      el.addEventListener('mouseleave', function(){
         path.animate({'path' : pathConfig.from }, speed, easing);
       });
     });
@@ -23,6 +22,10 @@ $(document).ready(function(){
 });
 
 /*
+----------------------
+------Javascript------
+----------------------
+
 (function() {
 
      function init() {
@@ -50,6 +53,9 @@ $(document).ready(function(){
 
       })();
 
+--------------------
+--------HTML--------
+--------------------
 
       <html lang="en">
         <head>
@@ -81,4 +87,6 @@ $(document).ready(function(){
           </section>
         </body>
       </html>
+
+
 */

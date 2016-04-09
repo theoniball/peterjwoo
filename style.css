@@ -59,7 +59,10 @@ body{
   animation-iteration: 1;
   animation-name: dash, fillin;
 }
-
+.clearfix {
+  content: " ";
+  display: table;
+}
 /*----- hover -----*/
 /*#s3:hover{
   animation-name: extend;
