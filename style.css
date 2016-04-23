@@ -19,7 +19,7 @@ body{
   font-family: pwooHandwriting;
   background-color: #ECECEC;
   width: 100%;
-  height: 300px;
+  height: 100px;
 }
 #home {
   stroke: black;
@@ -49,15 +49,21 @@ body{
   stroke: #ffffff;
   fill: #ffffff;
   animation-duration: 2s, 2s;
-  animation-delay: 5.5s, 6.5s;
+  animation-delay: 0s, 1s;
 }
 .animatein {
   fill-opacity: 0;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation-fill-mode: forwards;
-  animation-iteration: 1;
+  animation-iteration-count: 1;
   animation-name: dash, fillin;
+}
+.rainbow{
+  animation-name: colorFade;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  transition-timing-function: ease-in-out;
 }
 /*----- hover -----*/
 /*#s3:hover{
@@ -88,4 +94,13 @@ body{
   to {
     fill-opacity: 1;
   }
+}
+@keyframes colorFade{
+  0% {fill:#ffffff;}
+  17% {fill:#ff0000;}
+  33% {fill: #ff751a;}
+  50% {fill:#ffff00;}
+  66% {fill:#00cc00;}
+  83% {fill:#0066ff;}
+  100% {fill:#751aff;}
 }

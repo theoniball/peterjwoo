@@ -1,67 +1,86 @@
-var s = Snap(500, 500),
-    sec3 = s.rect(0,0,300,100),
-    sec2 = s.rect(0,0,250,100),
-    sec1 = s.rect(0,0,200,100),
-    sec0 = s.rect(0,0,150,100);
+var s = Snap("#navbar"),
+    sec3 = s.rect(0,0,275,100),
+    sec2 = s.rect(0,0,225,100),
+    sec1 = s.rect(0,0,175,100),
+    sec0 = s.rect(0,0,125,100),
+    logo = s.path("M50,89 A45,45 0 1,1 110,89 q-3 2 -5 -5 l -5 -15 q-2.5 -3 -5 0 l-5 15 c -2 9 -5 5 -5 0 l -3 -20 q-2 -5 5 -5 c35 -5 15 -30 -20 -30 q-5 0 -5 5 l -2 52 c 0 6 -5 8 -11 2 Z");
     //nav = s.group(sec3, sec2, sec1, sec0);
 
 sec3.attr({
   id : 'sec3',
   fill : '#bfbfbf',
-  data-orig-w : 300,
 });
 sec2.attr({
   id : 'sec2',
   fill : '#808080',
-  data-orig-w : 250,
 });
 sec1.attr({
   id : 'sec1',
   fill : '#404040',
-  data-orig-w : 200,
 });
 sec0.attr({
   id : 'sec0',
+  class: 'home',
   fill : '#000000',
 });
+logo.attr({
+  id: 'logo',
+  class: 'rainbow',
+  //fill: "#fff",
+});
+logo.transform("t-17, 0");
 //sec0.hover(hovExtend(0), hovRetract(0));
 $(document).ready(function(){
 
   sec1.hover(testExtend,testRetract);
   sec2.hover(testExtend,testRetract);
   sec3.hover(testExtend,testRetract);
+  sec0.hover(testExtend,testRetract);
 
   function testExtend(){
     switch(this.attr('id')){
       case 'sec1':
-        sec1.animate({width: (parseInt(sec1.attr('width')) + 50)},200);
-        sec2.animate({width: (parseInt(sec2.attr('width')) + 50)},200);
-        sec3.animate({width: (parseInt(sec3.attr('width')) + 50)},200);
+        sec1.animate({width: 225},200);
+        sec2.animate({width: 275},200);
+        sec3.animate({width: 325},200);
         break;
       case 'sec2':
-        sec2.animate({width: (parseInt(sec2.attr('width')) + 50)},200);
-        sec3.animate({width: (parseInt(sec3.attr('width')) + 50)},200);
+        sec2.animate({width: 275},200);
+        sec3.animate({width: 325},200);
         break;
       case 'sec3':
-        sec3.animate({width: (parseInt(sec3.attr('width')) + 50)},200);
+        sec3.animate({width: 325},200);
+        break;
+      case 'sec0':
+        pulseLogo();
         break;
     }
   }
   function testRetract(sectionID){
     switch(this.attr('id')){
       case 'sec1':
-        sec1.animate({width: parseInt(sec1.attr('data-orig-w'))},200);
-        sec2.animate({width: parseInt(sec2.attr('data-orig-w'))},200);
-        sec3.animate({width: parseInt(sec3.attr('data-orig-w'))},200);
+        sec1.animate({width: 175},200);
+        sec2.animate({width: 225},200);
+        sec3.animate({width: 275},200);
         break;
       case 'sec2':
-        sec2.animate({width: parseInt(sec2.attr('data-orig-w'))},200);
-        sec3.animate({width: parseInt(sec3.attr('data-orig-w'))},200);
+        sec2.animate({width: 225},200);
+        sec3.animate({width: 275},200);
         break;
       case 'sec3':
-        sec3.animate({width: parseInt(sec3.attr('data-orig-w'))},200);
+        sec3.animate({width: 275},200);
+        break;
+      case 'sec0':
+        logo.stop().attr({opacity:1});
         break;
     }
+  }
+
+  function pulseLogo(){
+    logo.animate({opacity: .50},700,function(){
+      logo.attr({opacity: 1});
+      pulseLogo();
+    });
   }
 });
 //sec1.hover(hovExtend(1), hovRetract(1));
@@ -69,7 +88,9 @@ $(document).ready(function(){
 //sec3.hover(hovExtend(3), hovRetract(3));
 
 
+
 /*
+
 function hovExtend(sectionID){
   switch(sectionID){
     case 1:
