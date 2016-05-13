@@ -1,0 +1,145 @@
+/*-----------------------*/
+/*--------General--------*/
+/*-----------------------*/
+
+@font-face{
+  font-family: pwooHandwriting;
+  src: url(../assets/fonts/pwoo_handwriting.ttf);
+}
+
+body{
+  margin: 0;
+}
+
+/*-----------------------*/
+/*--------Navbar---------*/
+/*-----------------------*/
+
+#logo {
+  stroke: #ffffff;
+  stroke-width: 3;
+  fill: #ffffff;
+  animation-duration: 2s, 2s;
+  animation-delay: 0s, 1s;
+}
+#nav{
+  font-family: pwooHandwriting;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background-color: #e6e6e6;
+}
+#navitems{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#navitems li{
+  float: left;
+}
+#navitems li a{
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  color: #ffffff;
+}
+#navitems li svg{
+  height: 50px;
+}
+#navitems #home{
+  background-color: #000000;
+  width: 60px;
+}
+#navitems #blog{
+  background-color: #262626;
+  width: 70px;
+}
+#navitems #portfolio{
+  background-color: #4d4d4d;
+  width: 90px;
+}
+#navitems #about{
+  background-color: #737373;
+  width: 90px;
+}
+#navitems #collections{
+  background-color: #999999;
+  width: 90px;
+}
+#navitems #login{
+  background-color: #bfbfbf;
+  width: 70px;
+}
+svg text{
+  fill: #ffffff;
+}
+.highlight{
+  fill: none;
+  stroke: #ffffff;
+}
+.animatein {
+  fill-opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: dash, fillin;
+}
+.rainbow{
+  animation-name: colorFade;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  transition-timing-function: ease-in-out;
+}
+
+/*-----------------*/
+/*----- hover -----*/
+/*-----------------*/
+rect{
+  transition: opacity .5s ease;
+  opacity: 0;
+}
+svg:hover rect{
+  opacity: 1;
+}
+
+#home:hover #logo{
+  animation-name: pulse;
+  animation-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+/*-----------------------*/
+/*--Animation Keyframes--*/
+/*-----------------------*/
+
+@keyframes dash {
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fillin {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}
+@keyframes pulse{
+  0% {fill-opacity: 1;}
+  100% {
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes colorFade{
+  0% {fill:#ffffff;}
+  17% {fill:#ff0000;}
+  33% {fill: #ff751a;}
+  50% {fill:#ffff00;}
+  66% {fill:#00cc00;}
+  83% {fill:#0066ff;}
+  100% {fill:#751aff;}
+}

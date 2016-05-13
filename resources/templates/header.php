@@ -17,19 +17,3 @@
         <li><a href="#"><svg id="login" class="button" viewbox="-8 -30 45 45"><text>Login</text></svg></a></li>
       </ul>
     </div>
-<!--
-      <svg id="navbar">
-        <a href="google.com" id="s3link" data-path-hover="M0,0 l0 100 400 0 c50 -45 10 -50 70 -100 Z">
-          <path id="s3"class="animatein" d="M0,0 l0 100 300 0 c50 -45 10 -50 70 -100 Z"/>
-        </a>
-
-          <path id="s2" class="animatein" d="M0,0 l0 100 250 0 c50 -45 10 -50 70 -100 Z"/>
-          <path id="s1" class="animatein" d="M0,0 l0 100 200 0 c50 -45 10 -50 70 -100 Z"/>
-          <path id="home" class="animatein" d="M0,0 l0 100 150 0 c50 -45 10 -50 70 -100 Z"/>
-          <path id="logo" class="animatein" d="M50,89 A45,45 0 1,1 110,89 q-3 2 -5 -5 l -5 -15 q-2.5 -3 -5 0 l-5 15 c -2 9 -5 5 -5 0 l -3 -20 q-2 -5 5 -5 c35 -5 15 -30 -20 -30 q-5 0 -5 5 l -2 52 c 0 6 -5 8 -11 2 Z"/>
-
-      </svg>
-      -->
-    <script src="js/script.js" type="text/javascript"></script>
-  </body>
-</html>
